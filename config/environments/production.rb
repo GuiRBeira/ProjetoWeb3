@@ -79,7 +79,11 @@ Rails.application.configure do
   # --- CORREÇÃO APLICADA AQUI ---
   # Adiciona o seu domínio da Render e também uma regra geral para aceitar
   # qualquer subdomínio da Vercel/Render, o que é mais robusto.
+  
   config.hosts << "projetoweb3-cvqd.onrender.com"
+  config.hosts << /.+\.vercel\.app/
+  config.hosts << /.+\.render\.com/
+
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
 end
