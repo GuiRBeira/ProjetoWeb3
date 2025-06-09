@@ -76,12 +76,13 @@ Rails.application.configure do
   # Only use :id for inspections in production.
   config.active_record.attributes_for_inspect = [ :id ]
 
-  # Enable DNS rebinding protection and other `Host` header attacks.
-  # config.hosts = [
-  #   "example.com",     # Allow requests from example.com
-  #   /.*\.example\.com/ # Allow requests from subdomains like `www.example.com`
-  # ]
-  #
+  # --- CORREÇÃO APLICADA AQUI ---
+  # Descomente a linha abaixo e adicione o seu domínio da Render.
+  # Isto diz ao Rails para confiar nos pedidos que vêm deste endereço.
+  config.hosts = [
+    "projetoweb3-cvqd.onrender.com"
+  ]
+  
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
 end
