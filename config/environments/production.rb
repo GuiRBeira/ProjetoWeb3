@@ -77,9 +77,10 @@ Rails.application.configure do
   config.active_record.attributes_for_inspect = [ :id ]
 
   # --- CORREÇÃO APLICADA AQUI ---
-  # Descomente a linha abaixo e adicione o seu domínio da Render.
-  # Isto diz ao Rails para confiar nos pedidos que vêm deste endereço.
+  # Adiciona o seu domínio da Render e também uma regra geral para aceitar
+  # qualquer subdomínio da Vercel/Render, o que é mais robusto.
   config.hosts << "projetoweb3-cvqd.onrender.com"
+  config.hosts << ".onrender.com" # Adiciona esta linha para permitir todos os subdomínios da Render.
   
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
