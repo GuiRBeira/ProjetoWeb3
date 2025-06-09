@@ -79,9 +79,7 @@ Rails.application.configure do
   # --- CORREÇÃO APLICADA AQUI ---
   # Descomente a linha abaixo e adicione o seu domínio da Render.
   # Isto diz ao Rails para confiar nos pedidos que vêm deste endereço.
-  config.hosts = [
-    "projetoweb3-cvqd.onrender.com"
-  ]
+  config.hosts << "projetoweb3-cvqd.onrender.com"
   
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
